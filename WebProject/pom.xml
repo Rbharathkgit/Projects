@@ -110,5 +110,5 @@
 		</dependency>
 	</dependencies>
   <groupId>com.test.web</groupId>
-  <version>1.0.0</version>
+  <version>1</version>
 </project>

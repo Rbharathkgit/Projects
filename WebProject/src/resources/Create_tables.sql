@@ -88,19 +88,3 @@ insert into datapoint(datapoint_name,datapoint_id,subscriber_id,community_id,xpa
 insert into datapoint(datapoint_name,datapoint_id,subscriber_id,community_id,xpath) 
 			   values('datapoint2',1002,1001,1001,'test/test1/test3');
 commit;
-
-drop table IF EXISTS template;
-create table template(
-template_name varchar(255) NOT NULL UNIQUE,
-template_id BIGINT PRIMARY KEY,
-subscriber_id BIGINT NOT NULL,
-community_id BIGINT NOT NULL,
-template_file BLOB(20M) NOT NULL,
-FOREIGN KEY (subscriber_id) REFERENCES subscriber(subscriber_id),
-FOREIGN KEY (community_id) REFERENCES community(community_id)
-);
-insert into template(template_name,template_id,subscriber_id,community_id,template_file) 
-			   values('template1',1001,1001,1001,'test/test1/test2');
-insert into template(template_name,template_id,subscriber_id,community_id,template_file)
-			   values('template2',1002,1001,1001,'test/test1/test2');
-commit;

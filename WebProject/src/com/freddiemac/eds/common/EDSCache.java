@@ -116,7 +116,7 @@ public class EDSCache implements ServletContextListener {
         StringBuffer sb = new StringBuffer();
         try
         {											 
-            FileReader fr = new FileReader(new File("C:\\Users\\c38847\\Desktop\\EDS\\EDS\\src\\resources\\Create_tables.sql"));
+            FileReader fr = new FileReader(new File("C:/Users/5307/git/Projects/WebProject/src/resources/Create_tables.sql"));
             // be sure to not have line starting with "--" or "/*" or any other non aplhabetical character
  
             BufferedReader br = new BufferedReader(fr);
