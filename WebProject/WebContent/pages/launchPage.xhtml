@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+<head>
+<title>EDS Decision Simulator</title>
+</head>
+
+<h:body>
+	<div id="page" class="container">
+		<div id="header" class="center">
+			<ui:insert name="header">
+				<ui:include src="/templates/header-base.xhtml" />
+			</ui:insert>
+		</div>
+		<div id="menu" class="center">
+			<ui:insert name="menu">
+				<ui:include src="/templates/menu-launch.xhtml" />
+			</ui:insert>
+		</div>
+		<div id="content">
+			<ui:insert name="content">
+				<ui:include src="/content/launchPageContent.xhtml" />
+			</ui:insert>
+		</div>
+		<div id="footer">
+			<ui:insert name="footer">
+				<ui:include src="/templates/footer-base.xhtml" />
+			</ui:insert>
+		</div>
+	</div>
+</h:body>
+
+</html>

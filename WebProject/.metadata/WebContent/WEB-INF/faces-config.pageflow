@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14687640527891" configfile="/EDS/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="pages/launchPage.xhtml" x="122" y="178" id="pf14688619271900" path="/pages/launchPage.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/workspacePage.xhtml" x="122" y="562" id="pf14688619271902" path="/pages/workspacePage.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/home.xhtml" id="pf14699696197923" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf14699696197924 pf14699786692720" path="/pages/home.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/workspace.xhtml" id="pf14699696197925" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf14699696197924" path="/pages/workspace.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/scenario.xhtml" id="pf14699786692731" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf14699786692720" path="/pages/scenario.xhtml"/>
+  <links id="pf14699696197924" target="pf14699696197925" source="pf14699696197923" outcome="workspace" redirect="true"/>
+  <links id="pf14699786692720" target="pf14699786692731" source="pf14699696197923" outcome="scenario" redirect="true"/>
+</pageflow:Pageflow>

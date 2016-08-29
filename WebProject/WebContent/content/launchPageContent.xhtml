@@ -1,0 +1,101 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+
+	<div class="container">
+		<DIV class="apps row text-center">
+			<div class="col-md-2"></div>
+			<div id="Loan APP" class="col-md-2 client">
+				<img class="img-rounded" src="../resources/images/loan.png" /><br /> 
+				<label>LOAN APP</label>
+			</div>
+			<div id="Contract APP" class="col-md-2 client">
+				<img
+					class="img-rounded" src="../resources/images/contract.png" /><br />
+					<label>CONTRACT APP</label>
+			</div>
+			<div class="col-md-2">
+				<a href="#" onclick="alert('Reprice Page');"> <img
+					class="img-rounded" src="../resources/images/reprice.png" /><br />
+					<label>REPRICE APP</label>
+				</a>
+			</div>
+			<div class="col-md-3"></div>
+		</DIV>
+		<div class="bottom-space"></div>
+		<DIV class="apps row text-center">
+			<div class="col-md-2"></div>
+			<div class="col-md-2">
+				<a href="#" onclick="alert('Single Security Page');"> <img
+					class="img-rounded" src="../resources/images/singlesecurity.png" /><br />
+					<label>Single Security APP</label>
+				</a>
+			</div>
+			<div class="no col-md-2">
+				<a> <img class="img-rounded"
+					src="../resources/images/image1.png" />
+				</a>
+			</div>
+			<div class="no col-md-2">
+				<a> <img class="img-rounded"
+					src="../resources/images/image1.png" />
+				</a>
+			</div>
+			<div class="col-md-2"></div>
+		</DIV>
+		<div class="bottom-space"></div>
+		<DIV class="apps no row text-center">
+			<div class="col-md-2"></div>
+			<div class="col-md-2">
+				<a> <img class="img-rounded"
+					src="../resources/images/image1.png" />
+				</a>
+			</div>
+			<div class="col-md-2">
+				<a> <img class="img-rounded"
+					src="../resources/images/image1.png" />
+				</a>
+			</div>
+			<div class="col-md-2">
+				<a> <img class="img-rounded"
+					src="../resources/images/image1.png" />
+				</a>
+			</div>
+			<div class="col-md-3"></div>
+		</DIV>
+		<h:panelGroup id="workspaceDialog" style="display:none">
+			<h:form id="wsdialogForm">
+				<div id="dialogdiv" title="Select WorkSpace">
+					<div class="row">
+					<div class="col-md-5">
+					<h:outputLabel id="clientNamelable" disabled="true"
+						value="Client Name :"></h:outputLabel>
+					</div>
+					<div class="col-md-5">
+					<h:inputText id="clientName" disabled="true"
+						value="Loan APP"></h:inputText>
+					</div>
+					</div>
+					<div class="bottom-space"></div>
+					<div class="row">
+					<div class="col-md-5">
+					<h:outputLabel id="wsNamelable" disabled="true"
+						value="Workspace Name :"></h:outputLabel>
+					</div>
+					<div class="col-md-5">
+					<h:selectOneListbox value="#{launchPageBean.workspace.workspaceId}">
+						<f:selectItems value="#{edsClient.workspaceBeans}" var="wsvar"
+							itemLabel="#{wsvar.workspaceName}" itemValue="#{wsvar.workspaceId}">
+						</f:selectItems>
+					</h:selectOneListbox>
+					</div>
+					</div>
+
+				</div>
+			</h:form>
+		</h:panelGroup>
+	</div>
+</ui:composition>

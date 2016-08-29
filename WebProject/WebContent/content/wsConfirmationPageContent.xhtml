@@ -1,0 +1,89 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+
+	<div class="container">
+		<h:form id="wsdialogForm">
+			<div>
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-3">
+						<h:outputLabel styleClass="alert alert-success" value="Workspace created successfully."></h:outputLabel>
+					</div>
+				</div>
+				<div class="bottom-space">
+					<br />
+				</div>
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-3">
+						<h:outputLabel value="Community :"></h:outputLabel>
+					</div>
+					<div class="col-md-5">
+						<h:outputLabel value="#{workspacePageBean.workspace.community.communityName}"></h:outputLabel>
+					</div>
+				</div>
+				<div class="bottom-space">
+					<br />
+				</div>
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-3">
+						<h:outputLabel value="Subscriber Name :"></h:outputLabel>
+					</div>
+					<div class="col-md-5">
+						<h:outputLabel value="#{workspacePageBean.workspace.subscriber.subscriberName}"></h:outputLabel>
+					</div>
+				</div>
+				<div class="bottom-space">
+					<br />
+				</div>
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-3">
+						<h:outputLabel value="Workspace Name :"></h:outputLabel>
+					</div>
+					<div class="col-md-5">
+						<h:outputLabel value="#{workspacePageBean.workspace.workspaceName}"></h:outputLabel>
+					</div>
+				</div>
+				<div class="bottom-space">
+					<br />
+				</div>
+				<div class="bottom-space">
+					<br />
+				</div>
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-3">
+						<a class="btn btn-primary btn-block" href="../pages/createScenario.xhtml">Create a Scenario</a>
+					</div>
+					<div class="col-md-3">
+						<a class="btn btn-primary btn-block" href="../pages/home.xhtml">Change workspace</a>
+					</div>
+				</div>
+				<div class="bottom-space">
+					<br />
+				</div>
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-3">
+						<a class="btn btn-primary btn-block" href="../pages/addTemplate.xhtml">Add a Template</a>
+					</div>
+					<div class="col-md-3">
+						<a class="btn btn-primary btn-block" href="../pages/addDatapoint.xhtml">Add a Datapoint</a>
+					</div>
+				</div>
+				<div class="bottom-space">
+					<br />
+				</div>
+				<div class="bottom-space">
+					<br />
+				</div>
+			</div>
+		</h:form>
+	</div>
+</ui:composition>

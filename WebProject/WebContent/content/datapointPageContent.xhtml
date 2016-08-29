@@ -1,0 +1,154 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+
+	<div class="container">
+		<h:form id="wsdialogForm">
+			<div>
+				<h:panelGroup rendered="#{!datapointPageBean.savedMode}">
+					<div class="row bottom10">
+						<div class="col-md-2"></div>
+						<div class="col-md-3">
+							<h:outputLabel value="Community "></h:outputLabel>
+						</div>
+						<div class="col-md-4">
+							<h:selectOneMenu styleClass="form-control select2 onchange-subscriberdiv" id="community"
+								value="#{datapointPageBean.datapoint.community}">
+								<f:converter converterId="communityConverter"></f:converter>
+								<f:selectItem itemLabel="Please select a Community" noSelectionOption="true"></f:selectItem>
+								<f:selectItems value="#{datapointPageBean.communities}" var="var" 
+									itemLabel="#{var.communityName}" itemValue="#{var}"/>
+								<f:ajax event="change" listener="#{datapointPageBean.communityChangeEvent}"
+									render="subscriber"></f:ajax>
+							</h:selectOneMenu>
+							<h:outputLabel value="#{datapointPageBean.datapoint.community}" ></h:outputLabel>
+						</div>
+					</div>
+					<div class="row bottom10 depends" id="subscriberdiv">
+						<div class="col-md-2"></div>
+						<div class="col-md-3">
+							<h:outputLabel value="Subscriber Name "></h:outputLabel>
+						</div>
+						<div class="col-md-4">
+							<h:selectOneMenu id="subscriber" styleClass="form-control select2 depends onchange-dpdetails" onchange="onchangeSubscriber(this);"
+								value="#{datapointPageBean.datapoint.subscriber}">
+								<f:converter converterId="subscriberConverter"></f:converter>
+								<f:selectItem itemLabel="Please select a Subscriber" noSelectionOption="true"></f:selectItem>
+								<f:selectItems value="#{datapointPageBean.subscribers}" var="var" 
+									itemLabel="#{var.subscriberName}" itemValue="#{var}">
+								</f:selectItems>
+							</h:selectOneMenu>
+							<h:outputLabel value="#{datapointPageBean.datapoint.subscriber}"></h:outputLabel>
+						</div>
+					</div>
+					<div class="depends" id="dpdetails">
+						<div class="row bottom10">
+							<div class="col-md-2"></div>
+							<div class="col-md-3">
+								<h:outputLabel value="Datapoint Name "></h:outputLabel>
+							</div>
+							<div class="col-md-4">
+								<h:inputText id="dpName" styleClass="form-control mandatory" value="#{datapointPageBean.datapoint.datapointName}">
+								</h:inputText>
+							</div>
+						</div>
+						<div class="row bottom10">
+							<div class="col-md-2"></div>
+							<div class="col-md-3">
+								<h:outputLabel value="Xpath "></h:outputLabel>
+							</div>
+							<div class="col-md-4">
+								<h:inputText id="xpath" styleClass="form-control mandatory" value="#{datapointPageBean.datapoint.datapointXpath}">
+								</h:inputText>
+							</div>
+						</div>
+						<div class="row bottom10">
+							<div class="col-md-2"></div>
+							<div class="col-md-3">
+								<h:outputLabel value="Datatype "></h:outputLabel>
+							</div>
+							<div class="col-md-4">
+								<h:selectOneMenu id="datatype" styleClass="form-control select2 mandatory"
+									value="#{datapointPageBean.datapoint.dataType}">
+									<f:selectItem itemValue="string" itemLabel="String"/>
+									<f:selectItem itemValue="integer" itemLabel="Integer"/>
+									<f:selectItem itemValue="short" itemLabel="Short"/>
+									<f:selectItem itemValue="double" itemLabel="double"/>
+									<f:selectItem itemValue="double(10,8)" itemLabel="Double(10,8)"/>
+								</h:selectOneMenu>
+							</div>
+						</div>
+						
+						<div class="row top30 bottom17" id="btnsdiv">
+							<div class="col-md-2"></div>
+							<div class="col-md-3"></div>
+							<div class="col-md-4">
+								<h:commandButton styleClass="btn btn-primary btn-block" value="Save" action="#{datapointPageBean.saveDatapoint}"></h:commandButton>
+							</div>
+						</div>
+					</div>
+				</h:panelGroup>
+				<h:panelGroup rendered="#{datapointPageBean.savedMode}">
+					<div class="row bottom10">
+						<div class="col-md-2"></div>
+						<div class="col-md-3">
+							<h:outputLabel value="Community "></h:outputLabel>
+						</div>
+						<div class="col-md-4">
+							<h:outputLabel value="#{datapointPageBean.datapoint.community.communityName}"></h:outputLabel>
+						</div>
+					</div>
+					<div class="row bottom10" id="subscriberdiv">
+						<div class="col-md-2"></div>
+						<div class="col-md-3">
+							<h:outputLabel value="Subscriber Name "></h:outputLabel>
+						</div>
+						<div class="col-md-4">
+							<h:outputLabel value="#{datapointPageBean.datapoint.subscriber.subscriberName}"></h:outputLabel>
+						</div>
+					</div>
+					<div class="row bottom10">
+						<div class="col-md-2"></div>
+						<div class="col-md-3">
+							<h:outputLabel value="Datapoint Name "></h:outputLabel>
+						</div>
+						<div class="col-md-4">
+							<h:outputLabel value="#{datapointPageBean.datapoint.datapointName}"></h:outputLabel>
+						</div>
+					</div>
+					<div class="row bottom10">
+						<div class="col-md-2"></div>
+						<div class="col-md-3">
+							<h:outputLabel value="Xpath "></h:outputLabel>
+						</div>
+						<div class="col-md-4">
+							<h:outputLabel value="#{datapointPageBean.datapoint.datapointXpath}"></h:outputLabel>
+						</div>
+					</div>
+					<div class="row bottom10">
+						<div class="col-md-2"></div>
+						<div class="col-md-3">
+							<h:outputLabel value="Datatype "></h:outputLabel>
+						</div>
+						<div class="col-md-4">
+							<h:outputLabel value="#{datapointPageBean.datapoint.dataType}"></h:outputLabel>
+						</div>
+					</div>
+					
+					<div class="row top30 bottom17">
+						<div class="col-md-2"></div>
+						<div class="col-md-3">
+							<h:commandButton styleClass="btn btn-success btn-block" value="Edit" action="#{datapointPageBean.editDatapoint}"></h:commandButton>
+						</div>
+						<div class="col-md-4">
+							<h:commandButton styleClass="btn btn-success btn-block" value="Return Home" action="/pages/home.xhtml"></h:commandButton>
+						</div>
+					</div>				
+				</h:panelGroup>
+			</div>
+		</h:form>
+	</div>
+</ui:composition>
