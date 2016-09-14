@@ -27,12 +27,12 @@
 		<!-- Drop and re-create the database schema on startup -->
 		<property name="hbm2ddl.auto">create</property>
 		
-		<mapping package="com.freddiemac.eds.domain" />
-		<mapping class="com.freddiemac.eds.domain.Community"/>
-		<mapping class="com.freddiemac.eds.domain.DataPoint"/>
-		<mapping class="com.freddiemac.eds.domain.Scenario"/>
-		<mapping class="com.freddiemac.eds.domain.Subscriber"/>
-		<mapping class="com.freddiemac.eds.domain.Workspace"/>
+		<mapping package="com.web.domain" />
+		<mapping class="com.web.domain.Community"/>
+		<mapping class="com.web.domain.DataPoint"/>
+		<mapping class="com.web.domain.Scenario"/>
+		<mapping class="com.web.domain.Subscriber"/>
+		<mapping class="com.web.domain.Workspace"/>
 
 	</session-factory>
 
